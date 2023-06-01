@@ -11,6 +11,7 @@ import NewIcon from "@components/ui/icons/NewIcon";
 import SearchFillIcon from "@components/ui/icons/SearchFillIcon";
 import SearchIcon from "@components/ui/icons/SearchIcon";
 import ColorButton from "@components/ui/button/ColorButton";
+import Avatar from "@components/ui/Avatar";
 
 const MENU = [
   {
@@ -33,6 +34,8 @@ const MENU = [
 const Navigation = () => {
   const path = usePathname();
   const { data: session } = useSession();
+  const user = session?.user;
+  console.log(user);
 
   return (
     <nav className="flex items-center gap-3">
@@ -41,7 +44,11 @@ const Navigation = () => {
           {path === link.href ? link.clickedIcon : link.icon}
         </Link>
       ))}
-
+      {user && (
+        <Link href={`/user/${user.username}`}>
+          <Avatar image={user.image} />
+        </Link>
+      )}
       {session ? (
         <ColorButton text="sign out" onClick={() => signOut()} />
       ) : (
