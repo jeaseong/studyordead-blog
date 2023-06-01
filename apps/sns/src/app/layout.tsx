@@ -1,5 +1,9 @@
-import "./globals.css";
 import { Open_Sans } from "next/font/google";
+
+import Header from "@components/common/Header";
+
+import Session from "@context/Session";
+import "./globals.css";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 
@@ -14,8 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={sans.className}>{children}</body>
+    <html lang="en" className={sans.className}>
+      <body className="flex flex-col w-full max-w-screen-lg mx-auto ">
+        <Session>
+          <Header />
+          <main className="grow">{children}</main>
+        </Session>
+      </body>
     </html>
   );
 }
