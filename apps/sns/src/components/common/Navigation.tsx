@@ -35,7 +35,6 @@ const Navigation = () => {
   const path = usePathname();
   const { data: session } = useSession();
   const user = session?.user;
-  console.log(user);
 
   return (
     <nav className="flex items-center gap-3">

@@ -15,7 +15,7 @@ export default {
     },
     {
       title: 'Email',
-      name: 'eamil',
+      name: 'email',
       type: 'string',
     },
     {
@@ -34,6 +34,29 @@ export default {
         },
       ],
       validation: (Rule) => Rule.unique(),
+    },
+    {
+      title: 'Followers',
+      name: 'follower',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'user'}],
+        },
+      ],
+      validation: (Rule) => Rule.unique(),
+    },
+    {
+      title: 'Bookmarks',
+      name: 'bookmark',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'post'}],
+        },
+      ],
     },
   ],
   preview: {

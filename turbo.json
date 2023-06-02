@@ -5,7 +5,10 @@
     "AUTH_USER",
     "AUTH_PASS",
     "NEXT_PUBLIC_GOOGLE_CLIENT_ID",
-    "NEXT_PUBLIC_GOOGLE_SECRET_ID"
+    "NEXT_PUBLIC_GOOGLE_SECRET_ID",
+    "SANITY_PROJECT_ID",
+    "SANITY_DATASET",
+    "SANITY_SECRET_TOKEN"
   ],
   "pipeline": {
     "build": {
