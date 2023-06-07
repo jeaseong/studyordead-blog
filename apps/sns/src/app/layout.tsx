@@ -2,7 +2,9 @@ import { Open_Sans } from "next/font/google";
 
 import Header from "@components/common/Header";
 
+import Swr from "@context/Swr";
 import Session from "@context/Session";
+
 import "./globals.css";
 
 const sans = Open_Sans({ subsets: ["latin"] });
@@ -20,10 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={sans.className}>
       <body className="flex flex-col w-full max-w-screen-lg mx-auto ">
-        <Session>
-          <Header />
-          <main className="grow">{children}</main>
-        </Session>
+        <Swr>
+          <Session>
+            <Header />
+            <main className="flex justify-center grow bg-neutral-50">
+              {children}
+            </main>
+          </Session>
+        </Swr>
       </body>
     </html>
   );

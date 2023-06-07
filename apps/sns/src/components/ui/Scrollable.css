@@ -1,0 +1,7 @@
+.react-multiple-carousel__arrow {
+  min-width: 24px;
+  min-height: 24px;
+}
+.react-multiple-carousel__arrow::before {
+  font-size: 12px;
+}

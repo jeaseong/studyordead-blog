@@ -45,7 +45,7 @@ const Navigation = () => {
       ))}
       {user && (
         <Link href={`/user/${user.username}`}>
-          <Avatar image={user.image} />
+          <Avatar size="sm" image={user.image} />
         </Link>
       )}
       {session ? (
